@@ -1,55 +1,31 @@
-# Server Setup Guide for Macbook
+To install phpMyAdmin without Docker, you can follow these steps:
 
-This repository contains instructions on how to set up a server on your Macbook.
+Install PHP:
 
-## Prerequisites
+Ensure you have PHP installed on your Macbook. You can use Homebrew to install PHP as mentioned earlier:
 
-Before you begin, ensure you have the following:
+bash
+Copy code
+brew install php
+Install phpMyAdmin:
 
-- macOS installed on your Macbook.
-- Basic knowledge of the command line.
-- Administrative access to your Macbook.
+You can use Homebrew's phpMyAdmin formula to install phpMyAdmin:
 
-## Installation
+bash
+Copy code
+brew tap phpmyadmin/phpmyadmin
+brew install phpmyadmin
+Configuration:
 
-Follow these steps to set up your server:
+Configure phpMyAdmin as needed. The configuration file is typically located in /usr/local/etc/phpmyadmin/config.inc.php.
 
-```bash
-# Step 1: Install Homebrew
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+Starting phpMyAdmin:
 
-# Step 2: Install Docker
-brew install docker
+Start phpMyAdmin by navigating to its installation directory and using the PHP built-in server:
 
-# Step 3: Install Node.js
-brew install node
-
-# Step 4: Clone this repository
-git clone https://github.com/your-username/server-setup.git
-
-# Step 5: Navigate to the repository directory
-cd server-setup
-
-# Step 6: Start your server application
-# Replace 'your-server-app.js' with your application's name
-node your-server-app.js
-
-
-## Usage
-
-Provide instructions on how to use your server, any configurations needed, and any additional software or dependencies required for your specific server application.
-
-## Contributing
-
-If you'd like to contribute to this project, please follow the guidelines in [CONTRIBUTING.md](CONTRIBUTING.md).
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## Acknowledgments
-
-List any acknowledgments or resources that you used for this setup guide.
-
-
+bash
+Copy code
+cd /usr/local/share/phpmyadmin
+php -S localhost:8080
+Then, access phpMyAdmin in your web browser at http://localhost:8080.
 
